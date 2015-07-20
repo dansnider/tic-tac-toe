@@ -1,0 +1,21 @@
+body {
+	font-family: 'Quicksand', sans-serif, 300;
+	font-weight: 300;
+}
+
+#gameboard {
+	display: block;
+	margin: 0 auto;
+	width: 800px;
+	height: 800px;
+	border:1px solid white;
+}
+
+.space {
+	float:left;
+	box-sizing: border-box;
+	border: 1px solid black;
+	height: 33.3333%;
+	width: 33.333%;
+	cursor: pointer;
+}
