@@ -7,7 +7,17 @@ $medblue: #6e95c0; //rgba(110, 149, 192, 100)
 $ltblue: #ddf3f4; //rgba(221, 243, 244, 100)
 $red: #E75640; 
 $ltgrey: #E8E8E8;
+$break-small: 400px;
 
+@media (max-width: 600px) {
+  .turn-container {
+    position: absolute;
+  }
+
+  .turn-display {
+  	font-size: 32px;
+  } 
+}
 
 body {
 	background-color: $white;
@@ -18,6 +28,9 @@ body {
 		width: 260px;
 		margin-left: 40px;
 		text-align: center;
+		@media screen and (max-width: $break-small) {
+    	position: relative;
+  	}
 	}
 
 	.turn-display {
@@ -25,6 +38,9 @@ body {
 		color: $navy;
 		font-size: 100px;
 		transition: all .2s ease;
+		@media screen and (max-width: $break-small) {
+    	font-size: 32px;
+  	}
 	}
 
 	h1 {
@@ -41,6 +57,11 @@ body {
 		color: $grey;
 		margin-top: 20px;
 		font-family: 'Quicksand', sans-serif, 300;
+		
+		@media screen and (max-width: $break-small) {
+    		width: 320px;
+    		height: 320px;
+  		}
 		
 		.winner{
 			color: $red;
@@ -73,8 +94,15 @@ body {
 		cursor: pointer;
 		padding: 98px 0 0 4px;
 
+		@media screen and (max-width: $break-small) {
+    		padding: 50px 0 0 4px;
+  		}
+
 		h1 {
 			font-size: 200px;
+			@media screen and (max-width: $break-small) {
+    		font-size: 80px;
+  		}
 		}
 
 		&:hover{
@@ -138,20 +166,32 @@ body {
 			top: 50%;
 			width: 600px;
 			height: 360px;
-			
 			margin-left: -300px;
 			margin-top: -180px;	
 			box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
-			
+			@media screen and (max-width: $break-small) {
+    		width: 320px;
+    		height: 190px;
+    		margin-left: -180px;
+    		margin-top: -95px;
+  		}
+
 			.content {
 				height: 260px;
 				background-color: $medgrey;
+
+				@media screen and (max-width: $break-small) {
+    			height: 120px;
+  			}
 
 				.message {
 					padding: 15px 0 0 30px;
 					font-size: 100px;
 					font-weight: 700;
 					color: $black;
+					@media screen and (max-width: $break-small) {
+		    		font-size: 32px;		    	
+		  		}
 				}
 
 				.sub-message{
@@ -161,6 +201,9 @@ body {
 					font-weight: 300;
 					font-style: italic;
 					color: $black;
+					@media screen and (max-width: $break-small) {
+		    		font-size: 18px;
+		  		}
 				}
 			}		
 
@@ -170,6 +213,9 @@ body {
 				position: absolute;
 				height: 100px;
 				width: 100%;
+				@media screen and (max-width: $break-small) {
+	    		height: 70px;
+  			}
 
 				.button {
 					display: table-cell;

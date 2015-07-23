@@ -1,3 +1,12 @@
+@media (max-width: 600px) {
+  .turn-container {
+    position: absolute;
+  }
+  .turn-display {
+    font-size: 32px;
+  }
+}
+
 body {
   background-color: #f5f5f5;
   font-family: 'Open Sans', sans-serif;
@@ -10,11 +19,23 @@ body .turn-container {
   text-align: center;
 }
 
+@media screen and (max-width: 400px) {
+  body .turn-container {
+    position: relative;
+  }
+}
+
 body .turn-display {
   opacity: 0;
   color: #011f83;
   font-size: 100px;
   transition: all 0.2s ease;
+}
+
+@media screen and (max-width: 400px) {
+  body .turn-display {
+    font-size: 32px;
+  }
 }
 
 body h1 {
@@ -31,6 +52,13 @@ body #gameboard {
   color: #616161;
   margin-top: 20px;
   font-family: 'Quicksand', sans-serif, 300;
+}
+
+@media screen and (max-width: 400px) {
+  body #gameboard {
+    width: 320px;
+    height: 320px;
+  }
 }
 
 body #gameboard .winner {
@@ -69,8 +97,20 @@ body .space {
   padding: 98px 0 0 4px;
 }
 
+@media screen and (max-width: 400px) {
+  body .space {
+    padding: 50px 0 0 4px;
+  }
+}
+
 body .space h1 {
   font-size: 200px;
+}
+
+@media screen and (max-width: 400px) {
+  body .space h1 {
+    font-size: 80px;
+  }
 }
 
 body .space:hover {
@@ -139,9 +179,24 @@ body .modal .box {
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
 }
 
+@media screen and (max-width: 400px) {
+  body .modal .box {
+    width: 320px;
+    height: 190px;
+    margin-left: -180px;
+    margin-top: -95px;
+  }
+}
+
 body .modal .box .content {
   height: 260px;
   background-color: #DBDBDB;
+}
+
+@media screen and (max-width: 400px) {
+  body .modal .box .content {
+    height: 120px;
+  }
 }
 
 body .modal .box .content .message {
@@ -149,6 +204,12 @@ body .modal .box .content .message {
   font-size: 100px;
   font-weight: 700;
   color: #3c3733;
+}
+
+@media screen and (max-width: 400px) {
+  body .modal .box .content .message {
+    font-size: 32px;
+  }
 }
 
 body .modal .box .content .sub-message {
@@ -160,12 +221,24 @@ body .modal .box .content .sub-message {
   color: #3c3733;
 }
 
+@media screen and (max-width: 400px) {
+  body .modal .box .content .sub-message {
+    font-size: 18px;
+  }
+}
+
 body .modal .box .button-area {
   display: table;
   background-color: #3c3733;
   position: absolute;
   height: 100px;
   width: 100%;
+}
+
+@media screen and (max-width: 400px) {
+  body .modal .box .button-area {
+    height: 70px;
+  }
 }
 
 body .modal .box .button-area .button {
