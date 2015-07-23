@@ -66,7 +66,7 @@ function init() {
 
 				} else if (tick == 9 && !winner) {
 					window.setTimeout(function(){
-						openDrawModal(winner)}, 2000);
+						openDrawModal()}, 2000);
 					$('.turn-display').css('opacity', 0);
 					$('.active').unbind('click');
 				}

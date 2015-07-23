@@ -11,9 +11,10 @@ body .turn-container {
 }
 
 body .turn-display {
+  opacity: 0;
   color: #011f83;
   font-size: 100px;
-  transition: all 1s ease;
+  transition: all 0.2s ease;
 }
 
 body h1 {
