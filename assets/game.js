@@ -19,12 +19,14 @@ function init() {
 		var $this = $(this);
 		$(this).unbind('click');
 
+		// O's turn
 		if (tick === 0 || tick % 2 === 0) {
 			tick++;
 			playerTurn($this, 'O', oSpaces);
 			checkForWin(oSpaces);
 			$('.current-turn').empty().append("X");
 		} else {
+			// X's turn
 			tick++;
 			playerTurn($this, 'X', xSpaces);
 			checkForWin(xSpaces);
@@ -54,6 +56,9 @@ function init() {
 			for (var i = 0; i < winningValues.length; i++){
 				var temp = _.intersection(ary, winningValues[i]);
 				
+				// if the intersection of the current winningValue 
+				// dimension and the score array is the same as the current
+				// winningValue dimension, trigger win.
 				if (arraysEqual(temp, winningValues[i])) {
 					var winner = $("#" + temp[0]).children().contents()[0];
 					
