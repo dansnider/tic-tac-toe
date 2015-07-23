@@ -22,6 +22,8 @@ body .turn-container {
 @media screen and (max-width: 400px) {
   body .turn-container {
     position: relative;
+    margin-left: 14%;
+    width: 300px;
   }
 }
 
@@ -34,7 +36,7 @@ body .turn-display {
 
 @media screen and (max-width: 400px) {
   body .turn-display {
-    font-size: 32px;
+    font-size: 40px;
   }
 }
 
@@ -174,7 +176,7 @@ body .modal .box {
   top: 50%;
   width: 600px;
   height: 360px;
-  margin-left: -300px;
+  margin-left: -280px;
   margin-top: -180px;
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
 }
@@ -183,8 +185,8 @@ body .modal .box {
   body .modal .box {
     width: 320px;
     height: 190px;
-    margin-left: -180px;
-    margin-top: -95px;
+    margin-left: -160px;
+    margin-top: -200px;
   }
 }
 
@@ -208,7 +210,8 @@ body .modal .box .content .message {
 
 @media screen and (max-width: 400px) {
   body .modal .box .content .message {
-    font-size: 32px;
+    font-size: 36px;
+    padding: 15px 15px;
   }
 }
 
@@ -224,6 +227,7 @@ body .modal .box .content .sub-message {
 @media screen and (max-width: 400px) {
   body .modal .box .content .sub-message {
     font-size: 18px;
+    padding: 0px 15px;
   }
 }
 
@@ -256,6 +260,13 @@ body .modal .box .button-area .button {
   font-weight: 400;
   border-radius: 4px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 400px) {
+  body .modal .box .button-area .button {
+    margin-top: 12px;
+    padding-top: 6px;
+  }
 }
 
 body .modal .box .button-area .button p {

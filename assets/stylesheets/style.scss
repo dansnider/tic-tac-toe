@@ -30,6 +30,8 @@ body {
 		text-align: center;
 		@media screen and (max-width: $break-small) {
     	position: relative;
+    	margin-left: 14%;
+    	width: 300px;
   	}
 	}
 
@@ -39,7 +41,7 @@ body {
 		font-size: 100px;
 		transition: all .2s ease;
 		@media screen and (max-width: $break-small) {
-    	font-size: 32px;
+    	font-size: 40px;
   	}
 	}
 
@@ -166,14 +168,14 @@ body {
 			top: 50%;
 			width: 600px;
 			height: 360px;
-			margin-left: -300px;
+			margin-left: -280px;
 			margin-top: -180px;	
 			box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
 			@media screen and (max-width: $break-small) {
     		width: 320px;
     		height: 190px;
-    		margin-left: -180px;
-    		margin-top: -95px;
+    		margin-left: -160px;
+    		margin-top: -200px;
   		}
 
 			.content {
@@ -190,7 +192,8 @@ body {
 					font-weight: 700;
 					color: $black;
 					@media screen and (max-width: $break-small) {
-		    		font-size: 32px;		    	
+		    		font-size: 36px;	
+		    		padding: 15px 15px;	    	
 		  		}
 				}
 
@@ -203,6 +206,7 @@ body {
 					color: $black;
 					@media screen and (max-width: $break-small) {
 		    		font-size: 18px;
+		    		padding: 0px 15px;
 		  		}
 				}
 			}		
@@ -232,6 +236,11 @@ body {
 					font-weight: 400;
 					border-radius: 4px;
 					cursor:pointer;
+
+					@media screen and (max-width: $break-small) {
+		    		margin-top: 12px;
+		    		padding-top: 6px;
+	  			}
 
 					p {
 						margin-top: 7px;
