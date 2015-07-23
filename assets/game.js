@@ -1,6 +1,8 @@
+$(function(){
+	init();
+});
 
-
-	// hover events, animation, winner display
+function init() {
 
 	var tick = 0,
 			oSpaces = [],
@@ -8,21 +10,25 @@
 			winningValues = [[1,2,3], 
 			[4,5,6], [7,8,9], [1,4,7], 
 			[2,5,8], [3,6,9], [1,5,9], 
-			[3,5,7]];
+			[3,5,7]],
+			colorArray = [0, '#42FFCB',
+			'#DA4167', '#FCD757', '#2B09B9',
+			'#F18F01', '#048BA8', '#99C24D'];
 
 	$('.active').on('click', function(){
 		var $this = $(this);
-		
 		$(this).unbind('click');
-		
+
 		if (tick === 0 || tick % 2 === 0) {
+			tick++;
 			playerTurn($this, 'O', oSpaces);
 			checkForWin(oSpaces);
-		} else if (tick === 9) {
-			resetGame();
+			$('.current-turn').empty().append("X");
 		} else {
+			tick++;
 			playerTurn($this, 'X', xSpaces);
 			checkForWin(xSpaces);
+			$('.current-turn').empty().append("O");
 		}
 
 	});
@@ -30,27 +36,39 @@
 	function playerTurn(space, player, ary) {
 		space.append('<h1>' + player + '</h1>');
 		ary.push(parseInt(space.attr('id')));
-		$('.turn').empty().append(player);
-		space.removeClass('active');
-		tick++
+		
 	}
 
 	function resetGame() {
-		// delete all content from divs
-		// reset tick
-		// reset winner text
+		$('.turn-display').css('opacity', 1);
+		$('.current-turn').empty().append("O");
+		init();
+		hideModal();
+		$('#gameboard div h1').remove();
 	}
 
 	function checkForWin(ary) {
 		if (tick >= 5) {
 			ary.sort();
 			
-			for (var i=0; i < winningValues.length; i++){
-				
+			for (var i = 0; i < winningValues.length; i++){
 				var temp = _.intersection(ary, winningValues[i]);
 				
 				if (arraysEqual(temp, winningValues[i])) {
-					alert('winner ' + ary)
+					var winner = $("#" + temp[0]).children().contents()[0];
+					
+					colorDecoration(temp);
+
+					window.setTimeout(function(){
+						openModal(winner)}, 1999);
+					$('.turn-display').css('opacity', 0);
+					$('.active').unbind('click');
+
+				} else if (tick == 9 && !winner) {
+					window.setTimeout(function(){
+						openDrawModal(winner)}, 2000);
+					$('.turn-display').css('opacity', 0);
+					$('.active').unbind('click');
 				}
 			}
 		}
@@ -67,3 +85,27 @@
 	  return true;
 	}
 
+	function openModal(winner) {
+		$('.winner').empty().append(winner);
+		$('.modal').show();
+	}
+
+	function openDrawModal() {
+		$('.modal.modal-draw').show();
+	}
+
+	function hideModal() {
+		$('.modal').hide();
+	}
+
+	$('.button').on('click', function(){
+		resetGame();
+	})
+
+	function colorDecoration(spaces) {
+		for (var i = 0; i < spaces.length; i++) {
+			$('#' + spaces[i] + " h1").addClass('winner');
+		}	
+	}
+
+}

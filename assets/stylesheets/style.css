@@ -1,6 +1,19 @@
 body {
-  font-family: 'Quicksand', sans-serif, 300;
-  font-weight: 300;
+  background-color: #f5f5f5;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body .turn-container {
+  position: fixed;
+  width: 260px;
+  margin-left: 40px;
+  text-align: center;
+}
+
+body .turn-display {
+  color: #011f83;
+  font-size: 100px;
+  transition: all 1s ease;
 }
 
 body h1 {
@@ -13,7 +26,30 @@ body #gameboard {
   margin: 0 auto;
   width: 600px;
   height: 600px;
-  border: 1px solid white;
+  border: 1px solid #f5f5f5;
+  color: #616161;
+  margin-top: 20px;
+  font-family: 'Quicksand', sans-serif, 300;
+}
+
+body #gameboard .winner {
+  color: #E75640;
+  animation-name: blinker;
+  animation-duration: .8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes blinker {
+  0% {
+    opacity: 1.0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1.0;
+  }
 }
 
 body .clear {
@@ -26,7 +62,6 @@ body .space {
   text-align: center;
   float: left;
   box-sizing: border-box;
-  border: 1px solid black;
   height: 33.3333%;
   width: 33.333%;
   cursor: pointer;
@@ -37,13 +72,55 @@ body .space h1 {
   font-size: 200px;
 }
 
+body .space:hover {
+  background-color: #E8E8E8;
+}
+
+body .space.space-1 {
+  border-bottom: 2px solid #616161;
+  border-right: 2px solid #616161;
+}
+
+body .space.space-2 {
+  border-bottom: 2px solid #616161;
+  border-right: 2px solid #616161;
+}
+
+body .space.space-3 {
+  border-bottom: 2px solid #616161;
+}
+
+body .space.space-4 {
+  border-bottom: 2px solid #616161;
+  border-right: 2px solid #616161;
+}
+
+body .space.space-5 {
+  border-bottom: 2px solid #616161;
+  border-right: 2px solid #616161;
+}
+
+body .space.space-6 {
+  border-bottom: 2px solid #616161;
+}
+
+body .space.space-7 {
+  border-right: 2px solid #616161;
+}
+
+body .space.space-8 {
+  border-right: 2px solid #616161;
+}
+
 body .modal {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: blue;
+  background-color: rgba(1, 31, 131, 0.7);
+  transition: opacity 0.2s ease-in-out;
 }
 
 body .modal .box {
@@ -52,26 +129,58 @@ body .modal .box {
   top: 50%;
   width: 600px;
   height: 360px;
-  background-color: white;
   margin-left: -300px;
   margin-top: -180px;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
 }
 
 body .modal .box .content {
   height: 260px;
-  background-color: yellow;
+  background-color: #DBDBDB;
+}
+
+body .modal .box .content .message {
+  padding: 30px 0 0 30px;
+  font-size: 100px;
+  font-weight: 700;
+  color: #3c3733;
+}
+
+body .modal .box .content .sub-message {
+  padding: 10px 0 0 30px;
+  font-size: 44px;
+  margin-top: 20px;
+  font-weight: 300;
+  font-style: italic;
+  color: #3c3733;
 }
 
 body .modal .box .button-area {
-  background-color: black;
+  display: table;
+  background-color: #3c3733;
+  position: absolute;
   height: 100px;
   width: 100%;
 }
 
 body .modal .box .button-area .button {
-  background-color: red;
+  display: table-cell;
+  vertical-align: middle;
+  background-color: #011f83;
   width: 200px;
-  height: 50px;
-  font-size: 30px;
+  height: 40px;
+  font-size: 16px;
   text-align: center;
+  display: block;
+  margin: 0 auto;
+  margin-top: 25px;
+  padding-top: 8px;
+  font-weight: 400;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+body .modal .box .button-area .button p {
+  margin-top: 7px;
+  color: white;
 }
