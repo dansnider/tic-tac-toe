@@ -123,6 +123,10 @@ body .modal {
   transition: opacity 0.2s ease-in-out;
 }
 
+body .modal.modal-welcome {
+  display: block;
+}
+
 body .modal .box {
   position: absolute;
   left: 50%;
@@ -147,7 +151,7 @@ body .modal .box .content .message {
 }
 
 body .modal .box .content .sub-message {
-  padding: 10px 0 0 30px;
+  padding: 10px 30px 0 30px;
   font-size: 39px;
   margin-top: 2px;
   font-weight: 300;
